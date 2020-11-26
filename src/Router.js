@@ -64,7 +64,7 @@ const RouteConfig = ({component: Component, fullLayout, auth: {isAuthenticated, 
                 ? context.horizontalLayout
                 : context.VerticalLayout
             return (
-              <LayoutTag {...props} permission={props.user}>
+              <LayoutTag {...props}>
                 <Suspense fallback={<Spinner/>}>
                   <Component {...props} />
                 </Suspense>

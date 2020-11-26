@@ -1,7 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="13f0a3f8-65da-433e-906c-8ff53ed78e90" name="Default Changelist" comment="" />
+    <list default="true" id="13f0a3f8-65da-433e-906c-8ff53ed78e90" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/utility/formatNumber.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/favicon.ico" beforeDir="false" afterPath="$PROJECT_DIR$/public/favicon.ico" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Router.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Router.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/data/locales/en.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/data/locales/en.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/@vuexy/spinner/Fallback-spinner.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/@vuexy/spinner/Fallback-spinner.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/configs/navigationConfig.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/configs/navigationConfig.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/configs/themeConfig.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/configs/themeConfig.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/layouts/components/footer/Footer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/layouts/components/footer/Footer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/layouts/components/menu/vertical-menu/SidebarHeader.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/layouts/components/menu/vertical-menu/SidebarHeader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/layouts/components/navbar/Navbar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/layouts/components/navbar/Navbar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/layouts/components/navbar/NavbarUser.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/layouts/components/navbar/NavbarUser.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/actions/auth/loginActions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/actions/auth/loginActions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/reducers/auth/loginReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/reducers/auth/loginReducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/reducers/auth/registerReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/reducers/auth/registerReducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/apps/trips/DataTableExpandable.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/apps/trips/DataTableExpandable.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/apps/trips/ModalCentered.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/apps/trips/ModalCentered.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/dashboard/ecommerce/EcommerceDashboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/dashboard/ecommerce/EcommerceDashboard.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/pages/account-settings/AccountSettings.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/pages/account-settings/AccountSettings.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/pages/account-settings/ChangePassword.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/pages/account-settings/ChangePassword.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/pages/account-settings/Connection.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/pages/account-settings/General.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/pages/account-settings/General.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/pages/account-settings/Info.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/pages/account-settings/Notifications.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/pages/account-settings/SocialLinks.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/pages/authentication/login/Login.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/pages/authentication/login/Login.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/pages/authentication/register/Register.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/pages/authentication/register/Register.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/ui-elements/cards/analytics/GoalOverview.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/ui-elements/cards/analytics/GoalOverview.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/ui-elements/cards/statistics/OrdersReceived.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/ui-elements/cards/statistics/OrdersReceived.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/ui-elements/cards/statistics/QuaterlySales.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/ui-elements/cards/statistics/QuaterlySales.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/ui-elements/cards/statistics/RevenueGenerated.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/ui-elements/cards/statistics/RevenueGenerated.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/ui-elements/cards/statistics/StatisticsData.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/ui-elements/cards/statistics/StatisticsData.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/ui-elements/cards/statistics/SubscriberGained.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/ui-elements/cards/statistics/SubscriberGained.js" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -14,7 +49,16 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="Abdur-Raqeeb Ajao &lt;ajaorqb@gmail.com&gt;" />
+      </list>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1kC0O34XJjT12Z33GPjtWNFUoo1" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -23,7 +67,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/views/apps/trips" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/public" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -32,16 +76,16 @@
     <property name="node.js.selected.package.standard" value="" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\acer\Desktop\AbdRaqeeb\react-ride\public" />
+      <recent name="C:\Users\acer\Desktop\AbdRaqeeb\react-ride\src\utility" />
+      <recent name="C:\Users\acer\Desktop\AbdRaqeeb\react-ride\src\views\pages\account-settings" />
+      <recent name="C:\Users\acer\Desktop\AbdRaqeeb\react-ride\src\views\apps\trips" />
+      <recent name="C:\Users\acer\Desktop\AbdRaqeeb\react-ride\src\views\apps" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\acer\Desktop\AbdRaqeeb\react-ride\src\views\apps" />
       <recent name="C:\Users\acer\Desktop\AbdRaqeeb\react-ride\src\views\apps\pagination" />
-      <recent name="C:\Users\acer\Desktop\AbdRaqeeb\react-ride\src\redux\actions" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\acer\Desktop\AbdRaqeeb\react-ride\src\views\apps\trips" />
-      <recent name="C:\Users\acer\Desktop\AbdRaqeeb\react-ride\src\views\apps" />
-      <recent name="C:\Users\acer\Desktop\AbdRaqeeb\react-ride\src\views\apps\payments" />
-      <recent name="C:\Users\acer\Desktop\AbdRaqeeb\react-ride\src\redux\reducers" />
       <recent name="C:\Users\acer\Desktop\AbdRaqeeb\react-ride\src\redux\actions" />
     </key>
   </component>
@@ -77,7 +121,12 @@
       <workItem from="1605676579330" duration="31704000" />
       <workItem from="1605820582090" duration="10643000" />
       <workItem from="1605904270970" duration="33231000" />
-      <workItem from="1606022340062" duration="17065000" />
+      <workItem from="1606022340062" duration="17764000" />
+      <workItem from="1606108876612" duration="9138000" />
+      <workItem from="1606140369501" duration="584000" />
+      <workItem from="1606164144146" duration="6419000" />
+      <workItem from="1606195334939" duration="6539000" />
+      <workItem from="1606375184541" duration="14020000" />
     </task>
     <servers />
   </component>
@@ -97,6 +146,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="413" y="109" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1366.728@0.0.1366.728" timestamp="1606027604216" />
+    <state x="306" y="0" key="CommitChangelistDialog2" timestamp="1606391196430">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="306" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1606391196430" />
     <state x="92" y="92" width="1182" height="544" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1605245382432">
       <screen x="0" y="0" width="1366" height="728" />
     </state>

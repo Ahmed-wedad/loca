@@ -8,7 +8,7 @@ import {
   CardBody,
   Form, Label, FormGroup, Input, Button, Spinner
 } from "reactstrap"
-import loginImg from "../../../../assets/img/pages/login.png"
+import loginImg from "../../../../assets/img/logo/Cajeq-01.png"
 import "../../../../assets/scss/pages/authentication.scss"
 import {Lock, User} from "react-feather"
 import {connect} from 'react-redux'
@@ -74,7 +74,7 @@ const Login = ({auth: {error, isAuthenticated}, login, clearErrors}) => {
               lg="6"
               className="d-lg-block d-none text-center align-self-center px-1 py-0"
             >
-              <img src={loginImg} alt="loginImg"/>
+              <img src={loginImg} width="300px" height="300px" alt="loginImg"/>
             </Col>
             <Col lg="6" md="12" className="p-0">
               <Card className="rounded-0 mb-0 px-2 login-tabs-container">

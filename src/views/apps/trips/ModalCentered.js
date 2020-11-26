@@ -6,34 +6,36 @@ import {
   ModalBody,
   CardBody,
   TabContent,
-  TabPane, Form, FormGroup, Col, Input, CustomInput, Spinner
+  TabPane, Form, FormGroup, Col, Input, Spinner
 } from "reactstrap"
 import {User, Mail, Smartphone} from "react-feather"
 import { modalCentered } from "./ModalSourceCode"
 
-const ModalCentered = ({current, clearErrors, modal, activeTab, toggleModal, verifyCar, msg}) => {
-  const [car, setCar] = useState({
+const ModalCentered = ({current, clearErrors, modal, activeTab, toggleModal, updateTrip, msg}) => {
+  const [trip, setTrip] = useState({
     name: '',
-    make: '',
-    isVerified: false,
     firstname: '',
     lastname: ''
   })
 
-  const [verified, setVerified] = useState({
-    isVerified: false
+  const [date, setDate] = useState({
+    start_date: '',
+    end_date: ''
   })
 
   const [waiting, setWaiting] = useState(false);
 
   useEffect(() => {
     if (current !== null) {
-      setCar({
-        name: current.name,
-        make: current.make,
-        isVerified: current.isVerified,
+      setTrip({
+        name: current.Car.name,
         firstname: current.User.firstname,
         lastname: current.User.lastname
+      })
+
+      setDate({
+        start_date: current.start_date,
+        end_date: current.end_date,
       })
     }
 
@@ -45,7 +47,8 @@ const ModalCentered = ({current, clearErrors, modal, activeTab, toggleModal, ver
     //eslint-disable-next-line
   }, [current, msg])
 
-  const {name, lastname, firstname, make} = car;
+  const {name, lastname, firstname} = trip
+  const {start_date, end_date} = date
 
 
   // const toggleTab = tab => {
@@ -54,13 +57,13 @@ const ModalCentered = ({current, clearErrors, modal, activeTab, toggleModal, ver
   //   }
   // }
 
-  const onChange = e => setVerified({...verified, [e.target.name]: e.target.value})
+  const onChange = e => setDate({...date, [e.target.name]: e.target.value})
 
 
   const onSubmit = e => {
     e.preventDefault();
     setWaiting(true)
-    verifyCar(current.car_id, verified)
+    updateTrip(current.trip_id, date)
   }
 
 
@@ -100,15 +103,33 @@ const ModalCentered = ({current, clearErrors, modal, activeTab, toggleModal, ver
 
                         <FormGroup row className="has-icon-left position-relative">
                           <Col md="4">
-                            <span>Car Make</span>
+                            <span>Start Date</span>
                           </Col>
                           <Col md="8">
                             <Input
-                              type="text"
-                              name="make"
-                              id="truckIcons"
-                              placeholder="Car Name"
-                              value={make}
+                              type="date"
+                              name="start_date"
+                              id="calendarIcons"
+                              placeholder="End Date"
+                              value={start_date}
+                              onChange={onChange}
+                            />
+                            <div className="form-control-position">
+                              <Smartphone size={15} />
+                            </div>
+                          </Col>
+                        </FormGroup>
+                        <FormGroup row className="has-icon-left position-relative">
+                          <Col md="4">
+                            <span>End Date</span>
+                          </Col>
+                          <Col md="8">
+                            <Input
+                              type="date"
+                              name="end_date"
+                              id="calendarIcons"
+                              placeholder="End Date"
+                              value={end_date}
                               onChange={onChange}
                             />
                             <div className="form-control-position">
@@ -155,23 +176,6 @@ const ModalCentered = ({current, clearErrors, modal, activeTab, toggleModal, ver
                           </Col>
                         </FormGroup>
 
-                        <FormGroup row className="has-icon-left position-relative">
-                          <Col md="4">
-                            <span>Verify</span>
-                          </Col>
-                          <Col md="8">
-                          <CustomInput
-                            type="select"
-                            name="isVerified"
-                            id="exampleSelectCustom"
-                            onChange={onChange}
-                          >
-                            <option>Select</option>
-                            <option value='true'>True</option>
-                            <option value='false'>False</option>
-                          </CustomInput>
-                          </Col>
-                        </FormGroup>
                         <FormGroup row className="has-icon-left position-relative">
                           <Col md={{ size: 8, offset: 4 }}>
                             <Button.Ripple

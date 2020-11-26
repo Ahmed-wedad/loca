@@ -8,6 +8,7 @@ const navigationConfig = [
     icon: <Icon.Home size={20} />,
     navLink: "/"
   },
+  //eslint-disable-next-line
   {
     id: "cars",
     title: "Cars",

@@ -99,15 +99,13 @@ export const updatePassword =  (formData) => async dispatch => {
   }
 };
 
-// Update Admin Password
+// Upload photo
 export const uploadProfilePhoto = (formData) => async dispatch => {
   const config = {
     headers: {
-      'Content-Type': 'application/json',
+      'Content-Type': 'multipart/form-data'
     },
-  };
-
-  setLoading()
+  }
 
   try {
     const res = await axios.put(`/api/v1/admin/upload`, formData, config);

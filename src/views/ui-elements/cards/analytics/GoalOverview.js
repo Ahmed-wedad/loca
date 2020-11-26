@@ -60,7 +60,7 @@ class GoalOverview extends React.Component {
         lineCap: "round"
       }
     },
-    series: [83]
+    series: [100]
   }
   render() {
     return (

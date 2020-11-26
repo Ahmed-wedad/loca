@@ -1,36 +1,25 @@
 import React from "react"
-import { Navbar } from "reactstrap"
-import { connect } from "react-redux"
+import {Navbar} from "reactstrap"
+import {connect} from "react-redux"
 import classnames from "classnames"
 import NavbarBookmarks from "./NavbarBookmarks"
 import NavbarUser from "./NavbarUser"
 import userImg from "../../../assets/img/portrait/small/avatar-s-11.jpg"
+import {loadUser, setLoading} from "../../../redux/actions/auth/loginActions";
+import PropTypes from "prop-types";
 
 const UserName = props => {
-  let username = ""
-  if (props.userdata !== undefined) {
-    username = props.userdata.name
-  } else if (props.user.login.values !== undefined) {
-    username = props.user.login.values.name
-    if (
-      props.user.login.values.loggedInWith !== undefined &&
-      props.user.login.values.loggedInWith === "jwt"
-    ) {
-      username = props.user.login.values.loggedInUser.name
-    }
-  } else {
-    username = "John Doe"
-  }
-
-  return username
+  return "Admin"
 }
-const ThemeNavbar = props => {
-  const colorsArr = [ "primary", "danger", "success", "info", "warning", "dark"]
-  const navbarTypes = ["floating" , "static" , "sticky" , "hidden"]
+
+const ThemeNavbar = (props, {loadUser, auth}) => {
+
+  const colorsArr = ["primary", "danger", "success", "info", "warning", "dark"]
+  const navbarTypes = ["floating", "static", "sticky", "hidden"]
   return (
     <React.Fragment>
-      <div className="content-overlay" />
-      <div className="header-navbar-shadow" />
+      <div className="content-overlay"/>
+      <div className="header-navbar-shadow"/>
       <Navbar
         className={classnames(
           "header-navbar navbar-expand-lg navbar navbar-with-menu navbar-shadow",
@@ -75,28 +64,14 @@ const ThemeNavbar = props => {
               {props.horizontal ? (
                 <div className="logo d-flex align-items-center">
                   <div className="brand-logo mr-50"></div>
-                  <h2 className="text-primary brand-text mb-0">Ride NG</h2>
+                  <h2 className="text-primary brand-text mb-0">Cajeq</h2>
                 </div>
               ) : null}
               <NavbarUser
                 handleAppOverlay={props.handleAppOverlay}
                 changeCurrentLang={props.changeCurrentLang}
                 userName={<UserName {...props} />}
-                userImg={
-                  props.user.login.values !== undefined &&
-                  props.user.login.values.loggedInWith !== "jwt" &&
-                  props.user.login.values.photoUrl
-                    ? props.user.login.values.photoUrl
-                    : userImg
-                }
-                loggedInWith={
-                  props.user !== undefined &&
-                  props.user.login.values !== undefined
-                    ? props.user.login.values.loggedInWith
-                    : null
-                }
-                logoutWithJWT={props.logoutWithJWT}
-                logoutWithFirebase={props.logoutWithFirebase}
+                userImg={userImg}
               />
             </div>
           </div>
@@ -106,10 +81,12 @@ const ThemeNavbar = props => {
   )
 }
 
-const mapStateToProps = state => {
-  return {
-    user: state.auth
-  }
+ThemeNavbar.propTypes = {
+  auth: PropTypes.object.isRequired,
 }
 
-export default connect(mapStateToProps)(ThemeNavbar)
+const mapStateToProps = state => ({
+  auth: state.auth.login
+})
+
+export default connect(mapStateToProps, {loadUser, setLoading})(ThemeNavbar)

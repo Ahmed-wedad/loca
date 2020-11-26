@@ -161,7 +161,7 @@ export const quaterlySales = {
 
 export const quaterlySalesSeries = [
   {
-    name: "Sales",
+    name: "Cars",
     data: [10, 15, 7, 12, 3, 16]
   }
 ]
@@ -217,7 +217,7 @@ export const ordersReceived = {
 
 export const ordersReceivedSeries = [
   {
-    name: "Orders",
+    name: "Trips",
     data: [10, 15, 8, 15, 7, 12, 8]
   }
 ]

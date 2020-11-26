@@ -35,7 +35,7 @@ import FinishTrip from "./FinishTrip"
 
 const DataTableExpandableRows = (
   {trip: {trips, loading, totalItems, currentPage, current, totalPages, error, msg},
-    getTrips, setLoading, setCurrent, acceptTrip, rejectTrip, cancelTrip, deleteTrip, finishTrip}) => {
+    getTrips, setLoading, setCurrent, acceptTrip, rejectTrip, cancelTrip, deleteTrip, finishTrip, updateTrip}) => {
 
   const [openSnackbar] = useSnackbar();
 
@@ -277,6 +277,7 @@ const DataTableExpandableRows = (
                 clearErrors={clearErrors}
                 toggleModal={toggleModal}
                 msg={msg}
+                updateTrip={updateTrip}
               />
               <AcceptTrip
                 activeTabA={activeTabA}

@@ -1,5 +1,13 @@
 {
   "Dashboard": "Dashboard",
+  "Cars": "Cars",
+  "Trips": "Trips",
+  "Reviews": "Reviews",
+  "Ratings": "Ratings",
+  "Payments": "Payments",
+  "Users": "Users",
+  "Licenses": "Licenses",
+  "Driver Licenses": "Driver Licenses",
   "Analytics": "Analytics",
   "Apps": "Apps",
   "eCommerce": "eCommerce",

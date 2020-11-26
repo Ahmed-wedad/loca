@@ -7,7 +7,7 @@ import {
   Row,
   Col, Form, Label, FormGroup, Input, Button, Spinner
 } from "reactstrap"
-import registerImg from "../../../../assets/img/pages/register.jpg"
+import registerImg from "../../../../assets/img/logo/Cajeq-01.png"
 import "../../../../assets/scss/pages/authentication.scss"
 import {Lock, Mail, User} from "react-feather";
 import {connect} from "react-redux"
@@ -84,7 +84,7 @@ const Register = ({auth: {error, isAuthenticated}, register, clearErrors}) => {
               lg="6"
               className="d-lg-block d-none text-center align-self-center px-1 py-0"
             >
-              <img className="mr-1" src={registerImg} alt="registerImg"/>
+              <img className="mr-1" width="300px" height="300px" src={registerImg} alt="registerImg"/>
             </Col>
             <Col lg="6" md="12" className="p-0">
               <Card className="rounded-0 mb-0 p-2">

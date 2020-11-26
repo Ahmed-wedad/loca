@@ -1,7 +1,7 @@
 import React from "react"
 import ScrollToTop from "react-scroll-up"
 import { Button } from "reactstrap"
-import { Heart, ArrowUp } from "react-feather"
+import { ArrowUp } from "react-feather"
 import classnames from "classnames"
 
 const Footer = props => {
@@ -17,18 +17,18 @@ const Footer = props => {
         <span className="float-md-left d-block d-md-inline-block mt-25">
           COPYRIGHT © {new Date().getFullYear()}
           <a
-            href="https://themeforest.net/user/pixinvent/portfolio?ref=pixinvent"
+            href="/"
             target="_blank"
             rel="noopener noreferrer"
           >
-            Pixinvent,
+            Cajeq,
           </a>
           All rights reserved
         </span>
-        <span className="float-md-right d-none d-md-block">
-          <span className="align-middle">Hand-crafted & Made with</span>{" "}
-          <Heart className="text-danger" size={15} />
-        </span>
+        {/*<span className="float-md-right d-none d-md-block">*/}
+        {/*  <span className="align-middle">Hand-crafted & Made with</span>{" "}*/}
+        {/*  <Heart className="text-danger" size={15} />*/}
+        {/*</span>*/}
       </p>
       {props.hideScrollToTop === false ? (
         <ScrollToTop showUnder={160}>

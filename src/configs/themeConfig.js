@@ -11,7 +11,7 @@ const themeConfig = {
   disableCustomizer: true, // options[Boolean]: true, false(default)
   hideScrollToTop: false, // options[Boolean]: true, false(default)
   disableThemeTour: false, // options[Boolean]: true, false(default)
-  menuTheme: "danger", // options[String]: primary / success / danger / info / warning / dark
+  menuTheme: "primary", // options[String]: primary / success / danger / info / warning / dark
   direction: "ltr" // options[String] : ltr / rtl
 };
 
