@@ -7,17 +7,19 @@ import {
   DELETE_CAR,
   CLEAR_CURRENT,
   SET_CURRENT,
-  CLEAR_ERRORS, SET_LOADING,
+  CLEAR_ERRORS,
+  SET_LOADING,
+  URL
 } from '../types'
 
 // Get cars
 export const getCars = (page, size, name, location) => async dispatch => {
-  const url = (size && name && location && page) ? `/api/v1/car?page=${page}&size=${size}&name=${name}&location=${location}`
-    : (page) ? `/api/v1/car?page=${page}`
-      : (size) ? `/api/v1/car?size=${size}`
-        : (name) ? `/api/v1/car?name=${name}`
-          : (location) ? `/api/v1/car?location=${location}`
-            :  `/api/v1/car`
+  const url = (size && name && location && page) ? `${URL}/api/v1/car?page=${page}&size=${size}&name=${name}&location=${location}`
+    : (page) ? `${URL}/api/v1/car?page=${page}`
+      : (size) ? `${URL}/api/v1/car?size=${size}`
+        : (name) ? `${URL}/api/v1/car?name=${name}`
+          : (location) ? `${URL}/api/v1/car?location=${location}`
+            :  `${URL}/api/v1/car`
   try {
     const res = await axios.get(url);
     dispatch({
@@ -31,7 +33,7 @@ export const getCars = (page, size, name, location) => async dispatch => {
 
 export const getCarsSearch = (search) => async dispatch => {
   try {
-    const res = await axios.get(`/api/v1/car?search=${search}`);
+    const res = await axios.get(`${URL}/api/v1/car?search=${search}`);
     dispatch({
       type: GET_CARS,
       payload: res.data,
@@ -45,7 +47,7 @@ export const getCarsSearch = (search) => async dispatch => {
 // Delete car
 export const deleteCar = (id) => async dispatch => {
   try {
-    await axios.delete(`/api/v1/car/${id}`);
+    await axios.delete(`${URL}/api/v1/car/${id}`);
 
     dispatch({ type: DELETE_CAR, payload: id });
   } catch (err) {
@@ -62,7 +64,7 @@ export const verifyCar = (id, formData) => async dispatch => {
   };
 
   try {
-    const res = await axios.put(`/api/v1/car/${id}`, formData, config);
+    const res = await axios.put(`${URL}/api/v1/car/${id}`, formData, config);
 
     dispatch({ type: VERIFY_CAR, payload: res.data });
 

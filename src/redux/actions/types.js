@@ -42,4 +42,4 @@ export const REJECT_TRIP = 'REJECT_TRIP'
 export const CANCEL_TRIP = 'CANCEL_TRIP'
 export const FINISH_TRIP = 'FINISH_TRIP'
 export const UPDATE_TRIP = 'UPDATE_TRIP'
-
+export const URL = "https://ride-ng.herokuapp.com"

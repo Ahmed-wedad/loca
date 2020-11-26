@@ -4,7 +4,8 @@ import {
   CLEAR_ERRORS,
   SET_LOADING,
   REGISTER_SUCCESS,
-  REGISTER_FAIL
+  REGISTER_FAIL,
+  URL
 } from "../types"
 import setAuthToken from "../../../utility/setAuthToken";
 import axios from "axios"
@@ -16,7 +17,7 @@ export const loadUser = () => async dispatch => {
   }
   try {
     setLoading();
-    const res = await axios.get(`/api/v1/auth/admin`);
+    const res = await axios.get(`${URL}/api/v1/auth/admin`);
 
     dispatch({
       type: USER_LOADED,
@@ -38,7 +39,7 @@ export const register = (formData) => async dispatch => {
   };
 
   try {
-    const res = await axios.post(`/api/v1/admin`, formData, config);
+    const res = await axios.post(`${URL}/api/v1/admin`, formData, config);
 
     dispatch({
       type: REGISTER_SUCCESS,

@@ -1,5 +1,5 @@
 import axios from 'axios'
-import {CLEAR_ERRORS, GET_USERS, SET_LOADING, USER_ERROR} from '../types'
+import {CLEAR_ERRORS, GET_USERS, SET_LOADING, USER_ERROR, URL} from '../types'
 
 export const setLoading = () => {
   return {
@@ -9,7 +9,7 @@ export const setLoading = () => {
 
 export const getUsers = () => async dispatch => {
   try {
-    const res = await axios.get(`/api/v1/stat/user`);
+    const res = await axios.get(`${URL}/api/v1/stat/user`);
     dispatch({
       type: GET_USERS,
       payload: res.data,
@@ -21,7 +21,7 @@ export const getUsers = () => async dispatch => {
 
 export const getUsersPage = (page) => async dispatch => {
   try {
-    const res = await axios.get(`/api/v1/stat/user?page=${page}`);
+    const res = await axios.get(`${URL}/api/v1/stat/user?page=${page}`);
     dispatch({
       type: GET_USERS,
       payload: res.data,
@@ -33,7 +33,7 @@ export const getUsersPage = (page) => async dispatch => {
 
 export const getUsersSearch = (search) => async dispatch => {
   try {
-    const res = await axios.get(`/api/v1/stat/user?name=${search}`);
+    const res = await axios.get(`${URL}/api/v1/stat/user?name=${search}`);
     dispatch({
       type: GET_USERS,
       payload: res.data,

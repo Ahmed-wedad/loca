@@ -12,9 +12,9 @@ import {
   PASSWORD_ERROR,
   UPLOAD_PHOTO,
   PHOTO_ERROR,
-  SET_LOADING
+  SET_LOADING,
+  URL
 } from "../types"
-
 
 // Load user
 export const loadUser = () => async dispatch => {
@@ -23,7 +23,7 @@ export const loadUser = () => async dispatch => {
   }
   try {
     setLoading();
-    const res = await axios.get(`/api/v1/auth/admin`);
+    const res = await axios.get(`${URL}/api/v1/auth/admin`);
 
     dispatch({
       type: USER_LOADED,
@@ -48,7 +48,7 @@ export const login = (formData) => async dispatch => {
   setLoading();
 
   try {
-    const res = await axios.post(`/api/v1/auth/admin`, formData, config);
+    const res = await axios.post(`${URL}/api/v1/auth/admin`, formData, config);
 
     dispatch({
       type: LOGIN_SUCCESS,
@@ -74,7 +74,7 @@ export const updateUser = (user) => async dispatch => {
   setLoading()
 
   try {
-    const res = await axios.put(`/api/v1/admin`, user, config);
+    const res = await axios.put(`${URL}/api/v1/admin`, user, config);
     dispatch({ type: UPDATE_USER, payload: res.data });
   } catch (err) {
     dispatch({ type: PASSWORD_ERROR, payload: err.response.data });
@@ -92,7 +92,7 @@ export const updatePassword =  (formData) => async dispatch => {
 
   setLoading()
   try {
-    const res = await axios.put(`/api/v1/admin/password`, formData, config);
+    const res = await axios.put(`${URL}/api/v1/admin/password`, formData, config);
     dispatch({ type: UPDATE_PASSWORD, payload: res.data });
   } catch (err) {
     dispatch({ type: PASSWORD_ERROR, payload: err.response.data });
@@ -108,7 +108,7 @@ export const uploadProfilePhoto = (formData) => async dispatch => {
   }
 
   try {
-    const res = await axios.put(`/api/v1/admin/upload`, formData, config);
+    const res = await axios.put(`${URL}/api/v1/admin/upload`, formData, config);
     dispatch({ type: UPLOAD_PHOTO, payload: res.data });
   } catch (err) {
     dispatch({ type: PHOTO_ERROR, payload: err.response.data });

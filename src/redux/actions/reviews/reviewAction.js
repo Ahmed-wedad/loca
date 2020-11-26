@@ -1,5 +1,5 @@
 import axios from 'axios'
-import {CLEAR_ERRORS, GET_REVIEWS, SET_LOADING, REVIEW_ERROR, DELETE_REVIEW} from '../types'
+import {CLEAR_ERRORS, GET_REVIEWS, SET_LOADING, REVIEW_ERROR, DELETE_REVIEW, URL} from '../types'
 
 export const setLoading = () => {
   return {
@@ -8,7 +8,7 @@ export const setLoading = () => {
 }
 
 export const getReviews = (page) => async dispatch => {
-  const url = page ? `/api/v1/review?page=${page}` : `/api/v1/review`
+  const url = page ? `${URL}/api/v1/review?page=${page}` : `${URL}/api/v1/review`
   try {
     const res = await axios.get(url);
     dispatch({
@@ -23,7 +23,7 @@ export const getReviews = (page) => async dispatch => {
 // Delete review
 export const deleteReview = (id) => async dispatch => {
   try {
-    await axios.delete(`/api/v1/review/${id}`);
+    await axios.delete(`${URL}/api/v1/review/${id}`);
 
     dispatch({ type: DELETE_REVIEW, payload: id });
   } catch (err) {

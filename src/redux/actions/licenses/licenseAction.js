@@ -7,11 +7,12 @@ import {
   LICENSE_ERROR,
   UPDATE_LICENSE,
   DELETE_LICENSE,
-  CLEAR_ERRORS
+  CLEAR_ERRORS,
+  URL
 } from '../types'
 
 export const getLicenses = (page) => async dispatch => {
-  const url = page ? `/api/v1/license?page=${page}` : `/api/v1/license`
+  const url = page ? `${URL}/api/v1/license?page=${page}` : `${URL}/api/v1/license`
   try {
     const res = await axios.get(url);
     dispatch({
@@ -32,7 +33,7 @@ export const updateLicense = (id, formData) => async dispatch => {
   };
 
   try {
-    const res = await axios.put(`/api/v1/license/${id}`, formData, config);
+    const res = await axios.put(`${URL}/api/v1/license/${id}`, formData, config);
 
     dispatch({ type: UPDATE_LICENSE, payload: res.data });
 
@@ -66,7 +67,7 @@ export const setLoading = () => {
 // Delete license
 export const deleteLicense = (id) => async dispatch => {
   try {
-    await axios.delete(`/api/v1/license/${id}`);
+    await axios.delete(`${URL}/api/v1/license/${id}`);
 
     dispatch({ type: DELETE_LICENSE, payload: id });
   } catch (err) {

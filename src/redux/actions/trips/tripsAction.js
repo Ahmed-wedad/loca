@@ -11,11 +11,12 @@ import {
   ACCEPT_TRIP,
   REJECT_TRIP,
   FINISH_TRIP,
-  CANCEL_TRIP
+  CANCEL_TRIP,
+  URL
 } from '../types'
 
 export const getTrips = (page) => async dispatch => {
-  const url = page ? `/api/v1/trip?page=${page}` : `/api/v1/trip`
+  const url = page ? `${URL}/api/v1/trip?page=${page}` : `${URL}/api/v1/trip`
   try {
     const res = await axios.get(url);
     dispatch({
@@ -55,7 +56,7 @@ export const updateTrip = (id, formData) => async dispatch => {
   };
 
   try {
-    const res = await axios.put(`/api/v1/trip/${id}`, formData, config);
+    const res = await axios.put(`${URL}/api/v1/trip/${id}`, formData, config);
 
     dispatch({ type: UPDATE_TRIP, payload: res.data });
 
@@ -71,7 +72,7 @@ export const updateTrip = (id, formData) => async dispatch => {
 export const acceptTrip = (id) => async dispatch => {
 
   try {
-    const res = await axios.put(`/api/v1/trip/accept/${id}`);
+    const res = await axios.put(`${URL}/api/v1/trip/accept/${id}`);
 
     dispatch({ type: ACCEPT_TRIP, payload: res.data });
 
@@ -87,7 +88,7 @@ export const acceptTrip = (id) => async dispatch => {
 export const rejectTrip = (id) => async dispatch => {
 
   try {
-    const res = await axios.put(`/api/v1/trip/reject/${id}`);
+    const res = await axios.put(`${URL}/api/v1/trip/reject/${id}`);
 
     dispatch({ type: REJECT_TRIP, payload: res.data });
 
@@ -104,7 +105,7 @@ export const rejectTrip = (id) => async dispatch => {
 export const finishTrip = (id) => async dispatch => {
 
   try {
-    const res = await axios.put(`/api/v1/trip/finish/${id}`);
+    const res = await axios.put(`${URL}/api/v1/trip/finish/${id}`);
 
     dispatch({ type: FINISH_TRIP, payload: res.data });
 
@@ -120,7 +121,7 @@ export const finishTrip = (id) => async dispatch => {
 export const cancelTrip = (id) => async dispatch => {
 
   try {
-    const res = await axios.put(`/api/v1/trip/cancel/${id}`);
+    const res = await axios.put(`${URL}/api/v1/trip/cancel/${id}`);
 
     dispatch({ type: CANCEL_TRIP, payload: res.data });
 
@@ -135,7 +136,7 @@ export const cancelTrip = (id) => async dispatch => {
 // Delete trip
 export const deleteTrip = (id) => async dispatch => {
   try {
-    await axios.delete(`/api/v1/trip/${id}`);
+    await axios.delete(`${URL}/api/v1/trip/${id}`);
 
     dispatch({ type: DELETE_TRIP, payload: id });
   } catch (err) {

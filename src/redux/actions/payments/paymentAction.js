@@ -1,5 +1,5 @@
 import axios from 'axios'
-import {SET_LOADING, GET_PAYMENTS, PAYMENT_ERROR, CLEAR_ERRORS} from '../types'
+import {SET_LOADING, GET_PAYMENTS, PAYMENT_ERROR, CLEAR_ERRORS, URL} from '../types'
 
 // Clear errors
 export const clearErrors = () => async dispatch => dispatch({ type: CLEAR_ERRORS });
@@ -11,7 +11,7 @@ export const setLoading = () => {
 }
 
 export const getPayments = (page) => async dispatch => {
-  const url = page ? `/api/v1/payment?page=${page}` : `/api/v1/payment`
+  const url = page ? `${URL}/api/v1/payment?page=${page}` : `${URL}/api/v1/payment`
   try {
     const res = await axios.get(url);
     dispatch({
