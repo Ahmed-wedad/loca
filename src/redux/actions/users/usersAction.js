@@ -1,5 +1,6 @@
 import axios from 'axios'
-import {CLEAR_ERRORS, GET_USERS, SET_LOADING, USER_ERROR, URL} from '../types'
+
+import {CLEAR_ERRORS, GET_USERS, SET_LOADING, USER_ERROR, URL, DISABLE_USER, USER_DISABLED} from '../types'
 
 export const setLoading = () => {
   return {
@@ -13,9 +14,11 @@ export const getUsers = () => async dispatch => {
     dispatch({
       type: GET_USERS,
       payload: res.data,
-    });
+    })
   }  catch (e) {
-    dispatch({ type: USER_ERROR, payload: e.response.data });
+
+    dispatch({ type: USER_ERROR, payload: e.response.data })
+
   }
 }
 
@@ -25,7 +28,7 @@ export const getUsersPage = (page) => async dispatch => {
     dispatch({
       type: GET_USERS,
       payload: res.data,
-    });
+    })
   }  catch (e) {
     dispatch({ type: USER_ERROR, payload: e.response.data });
   }
@@ -37,12 +40,20 @@ export const getUsersSearch = (search) => async dispatch => {
     dispatch({
       type: GET_USERS,
       payload: res.data,
-    });
+    })
   }  catch (e) {
     dispatch({ type: USER_ERROR, payload: e.response.data });
   }
 }
+export const disableUser = (id) => async dispatch => {
+  try {
+    await axios.put(`${URL}/api/v1/user/${id}/`);
 
+    dispatch({ type: USER_DISABLED, payload: id });
+  } catch (err) {
+    dispatch({ type: USER_ERROR, payload: err.response.data });
+  }
+}
 // Clear errors
-export const clearErrors = () => async dispatch => dispatch({ type: CLEAR_ERRORS });
+export const clearErrors = () => async dispatch => dispatch({ type: CLEAR_ERRORS })
 

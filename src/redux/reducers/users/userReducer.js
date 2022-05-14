@@ -1,4 +1,4 @@
-import {CLEAR_ERRORS, GET_USERS, SET_LOADING, USER_ERROR} from '../../actions/types'
+import {CLEAR_ERRORS, GET_USERS, SET_LOADING, USER_APPROUVED, USER_DISABLED, USER_ERROR} from '../../actions/types'
 const initialState = {
   users: [],
   error: null,
@@ -26,8 +26,31 @@ export const user = (state = initialState, action) => {
         totalPages: action.payload.users.totalPages,
         loading: false
       }
-
+    case USER_DISABLED :
+      const ag = state.users.reduce(()=>user.id===action.payload)
+      ag.statusBan=false
+      const newusers=state.users.filter((user) =>user.id !== action.payload)
+      newusers.push(ag)
+      
+    return {
+      ...state,
+     users: newusers,
+      msg: 'user disabled successfully',
+      loading: false,
+    }
+    case USER_APPROUVED :
+      const us = state.users.reduce(()=>user.id===action.payload)
+      us.statusBan=false
+      const newnewusers=state.users.filter((user) =>user.id !== action.payload)
+      newnewusers.push(us)
+    return {
+      ...state,
+     users: newnewusers,
+      msg: 'user disabled successfully',
+      loading: false,
+    }
     case USER_ERROR:
+      
       return {
         ...state,
         error: (action.payload.msg) ? action.payload.msg : action.payload,
