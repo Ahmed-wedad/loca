@@ -10,6 +10,7 @@ import * as xnix from "@svgr-iconkit/xnix"
 // import { useNavigation } from "@react-navigation/native"
 // import { useStores } from "../../models"
 import { color, spacing, typography } from "../../theme"
+import { destroy } from "mobx-state-tree"
 
 
 const ROOT: ViewStyle = {
@@ -83,19 +84,20 @@ const CONTINUE : ViewStyle={
 }
 export const VerifRootScreen: FC<StackScreenProps<NavigatorParamList, "verifRoot">> = observer(({navigation})=>{
   // Pull in one of our MST stores
-  //const { driver } = useStores()
+  // const { driver } = useStores()
   const nextScreen = () => navigation.navigate("licenseInfoSaisie")
+  
   
   // Pull in navigation via hook
   // const navigation = useNavigation()90
   return (
     <Screen style={ROOT} preset="fixed" statusBar="dark-content">
 
-      <Header titleStyle={HEADER_TITLE}  leftIcon={{type:"Material",name:"close" }} onLeftPress={()=>{}}/>
+      <Header titleStyle={HEADER_TITLE}  leftIcon={{type:"Material",name:"close" } }/>
       <View style={HEADER_CONTAINER}>
         <Text preset="header"   style = {TITLE} tx="verifRootScreen.header" />
       </View>
-      <Text style={[TEXT,]}>
+      <Text style={TEXT}>
             pour aider a laisser le communaute de Loca securiser,nous avons besoin de verifier votre identiter avant de confirmer votre voyage
           </Text>
           <View style={BODY_CONTAINER}>

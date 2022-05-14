@@ -7,7 +7,7 @@ import { Header, Screen, Text } from "../../components"
 // import { useNavigation } from "@react-navigation/native"
 // import { useStores } from "../../models"
 import { color, spacing, typography } from "../../theme"
-//import CountryPicker from "react-native-region-country-picker";
+// import CountryPicker from "react-native-region-country-picker";
 const ROOT: ViewStyle = {
   backgroundColor: color.palette.white,
   flex: 1,

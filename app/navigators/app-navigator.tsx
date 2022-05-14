@@ -10,6 +10,7 @@ import { navigationRef, useBackButtonHandler } from "./navigation-utilities"
 export type NavigatorParamList = {
   verifRoot: undefined,
   licenseInfoSaisie: undefined
+  myscreen:undefined
 }
 
 
